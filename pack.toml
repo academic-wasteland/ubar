@@ -1,0 +1,14 @@
+[pack]
+name = "ubar"
+schema = 2
+description = "Saudi population pangenome town"
+
+[imports]
+[imports.bd]
+source = "https://github.com/gastownhall/gascity/tree/main/examples/bd"
+version = "sha:f895c0ff47d6ee9334ed282a416387eb5b084d24"
+[imports.core]
+source = "https://github.com/gastownhall/gascity/tree/main/internal/bootstrap/packs/core"
+version = "sha:f895c0ff47d6ee9334ed282a416387eb5b084d24"
+[imports.pangenome-town]
+source = "/home/leechuck/Public/software/academic-wasteland/pangenome-town"

@@ -1,0 +1,23 @@
+[town]
+name = "ubar"
+display = "Ubar (أوبار)"
+population = "KSA"
+samples = ["ksa001", "ksa002", "ksa003", "ksa004", "ksa005", "ksa006", "ksa007", "ksa008", "ksa009"]
+rig = "ubar-rig"
+agent = "pangenome-town.townsfolk"
+citation = "Kulmanov M, Liu Y, Tawfiq R, et al. Phased genome assemblies and pangenome graphs of human populations of Japan and Saudi Arabia. Sci Data 12, 1316 (2025). doi:10.1038/s41597-025-05652-y"
+
+[town.peers]
+yamatai = "yamatai"
+
+[data]
+graph = "../data/jasapage/JaSaPaGe.gbz"
+vcf = "../data/jasapage/JaSaPaGe.GRCh38.vcf.gz"
+reference_paths = ["GRCh38", "CHM13v2"]
+reference_path_template = "{assembly}#0#{chrom}"
+default_assembly = "GRCh38"
+
+[exchange]
+db = "../data/exchange.db"
+supervisor_url = "http://127.0.0.1:8372"
+state_dir = ".gc/town"

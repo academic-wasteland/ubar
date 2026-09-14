@@ -1,0 +1,32 @@
+# Ubar (أوبار): a pangenome town in The Academic Wasteland.
+# Agents run on OpenRouter only (never a Claude subscription); default model GLM 5.3 Flash.
+
+[workspace]
+
+[workspace.env]
+PT_TOWN_TOML = "/home/leechuck/Public/software/academic-wasteland/ubar/town.toml"
+
+[providers.glm]
+base = "builtin:opencode"
+ready_delay_ms = 8000
+
+[providers.glm.env]
+OPENCODE_CONFIG_CONTENT = '{"model": "openrouter/z-ai/glm-5.3-flash"}'
+
+[upstreams.openrouter]
+api_key = "$OPENROUTER_API_KEY"
+api_key_env = "OPENROUTER_API_KEY"
+
+[agent_defaults]
+provider = "glm"
+upstream = "openrouter"
+
+[api]
+bind = "127.0.0.1"
+
+[[rigs]]
+name = "ubar-rig"
+prefix = "ubr"
+default_branch = "main"
+imports = ["pangenome-town"]
+default_sling_target = "ubar-rig/pangenome-town.townsfolk"
