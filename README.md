@@ -77,8 +77,7 @@ Design: [pangenome-town docs](https://github.com/academic-wasteland/pangenome-to
   JaSaPaGe VCF. Allele frequencies need a `DataAccessAuthorization` from `ubar-dac` and an `EthicsApproval`
   from `wasteland-irb` with a covering scope; only aggregate outputs are released under the aggregate scope.
 - **Sites.** `workstation` (local, vg and bcftools, 8 CPUs, 32 GB, 30 min) holds the graph, the VCF, and the
-  controlled tier. `ddbj` (ssh) is declared but disabled until an operator decides which host and account may
-  run jobs.
+  controlled tier. Ubar has no DDBJ site: DDBJ is Yamatai's cluster, so work that needs it goes to Yamatai.
 - **Rigger.** Rasha (`agents/rigger`, local Qwen) plans, validates, and runs compute workflows when
   `[compute] dispatch = "agent"`; with `inline` the node runs admitted jobs itself.
 
