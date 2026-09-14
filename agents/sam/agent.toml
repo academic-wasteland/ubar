@@ -1,0 +1,6 @@
+description = "Sam: a resident of Ubar who chats with humans, answers questions about the KSA pangenome, and runs on the lab's local Qwen (vLLM on unimatrix01)."
+provider = "qwen"
+upstream = "vllm"
+idle_timeout = "30m"
+max_active_sessions = 1
+nudge = "Run `gc mail check`. Answer any mail addressed to you (reply with `gc mail reply`), then run `gc hook --claim --drain-ack --json` and do any work it returns."
