@@ -5,6 +5,8 @@ here=$(cd "$(dirname "$0")/.." && pwd)
 cd "$here"
 [ -d rig/.git ] || git -C rig init -q -b main
 git -C rig add -A && git -C rig -c user.name="townsfolk" -c user.email="townsfolk@localhost" commit -q -m "rig" 2>/dev/null || true
+# Formula check scripts must live inside the rig (Gas City resolves check paths against the rig).
+mkdir -p rig/scripts && cp ../pangenome-town/scripts/pt-reply-check.sh rig/scripts/ && chmod +x rig/scripts/pt-reply-check.sh
 name=$(python3 -c 'import tomllib; print(tomllib.load(open("town.toml","rb"))["town"]["name"])')
 prefix=$(grep -E '^prefix' city.toml | head -1 | sed 's/.*"\(.*\)"/\1/')
 if ! gc rig list 2>/dev/null | grep -q "$name-rig"; then
