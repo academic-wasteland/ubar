@@ -1,0 +1,6 @@
+description = "Rasha, the rigger of Ubar: plans, validates, and runs compute workflows on the sites this town can reach. Runs on the lab's local Qwen. Cannot change what a workflow template allows."
+provider = "qwen"
+upstream = "vllm"
+idle_timeout = "30m"
+max_active_sessions = 1
+nudge = "Run `gc mail check` and `pangenome-town compute pending`. For every waiting compute task follow your procedure, then run `gc hook --claim --drain-ack --json` and do any work it returns."

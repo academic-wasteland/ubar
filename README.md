@@ -67,6 +67,27 @@ Reputation comes from the Wasteland commons (`wl create academic-wasteland/commo
 --local-only`, shared by both towns on this workstation); `[rcp]` in `town.toml`
 sets the threshold. The pack README explains the contract and the pipeline.
 
+## Resources and credentials
+
+Design: [pangenome-town docs](https://github.com/academic-wasteland/pangenome-town/blob/main/docs/resources-and-credentials.md).
+
+- **Trust.** `[trust]` anchors trust in Camelot's demo `ethics-council` (pinned key) and checks revocation at
+  Camelot's registrar. Issuers count only through accreditations that chain to that anchor.
+- **Controlled tier.** `ksa-individual-genotypes` is a *simulated* controlled-access tier over the open
+  JaSaPaGe VCF. Allele frequencies need a `DataAccessAuthorization` from `ubar-dac` and an `EthicsApproval`
+  from `wasteland-irb` with a covering scope; only aggregate outputs are released under the aggregate scope.
+- **Sites.** `workstation` (local, vg and bcftools, 8 CPUs, 32 GB, 30 min) holds the graph, the VCF, and the
+  controlled tier. `ddbj` (ssh) is declared but disabled until an operator decides which host and account may
+  run jobs.
+- **Rigger.** Rasha (`agents/rigger`, local Qwen) plans, validates, and runs compute workflows when
+  `[compute] dispatch = "agent"`; with `inline` the node runs admitted jobs itself.
+
+```bash
+pangenome-town compute sites
+pangenome-town rcp submit --to yamatai --kind allele-frequency --region GRCh38:chr6:29940000-29990000 \
+  --on-behalf-of https://orcid.org/<orcid> --holder https://orcid.org/<orcid>
+```
+
 ## Cost control
 
 Agents run only through OpenRouter (GLM 5.3 Flash) or the lab's own vLLM
