@@ -1,0 +1,67 @@
+{
+  "id": "https://w3id.org/academic-wasteland/ubar/contract/0.1.0",
+  "version": "0.1.0",
+  "bundleDigest": "sha256:9967e13a6594efabedddcb50af720ac8e89f13a8600117bc5669d3b067d25d2f",
+  "ontologies": [
+    {
+      "id": "https://w3id.org/academic-wasteland/ubar/contract/ontology",
+      "path": "ubar.ofn",
+      "digest": "sha256:bdfcb7d72408a4c6a26b649dfdf7755c4ca110a124758a082036244f834e75f3"
+    }
+  ],
+  "acceptedTaskClass": "https://w3id.org/academic-wasteland/ubar/AcceptedTask",
+  "guaranteedOutputClass": "https://w3id.org/academic-wasteland/ubar/ConformingContribution",
+  "rejectedTaskClass": "https://w3id.org/academic-wasteland/ubar/RejectedTask",
+  "permissionRequiredClass": "https://w3id.org/academic-wasteland/ubar/PermissionRequiredTask",
+  "assertionPolicy": {
+    "allowedClasses": [
+      "https://w3id.org/research-commons/v0.1/ResearchRequest",
+      "https://w3id.org/research-commons/v0.1/ResearchTask",
+      "https://w3id.org/research-commons/v0.1/ResearchContribution",
+      "https://w3id.org/research-commons/v0.1/Claim",
+      "https://w3id.org/research-commons/v0.1/Evidence",
+      "https://w3id.org/research-commons/v0.1/Person",
+      "https://w3id.org/research-commons/v0.1/Organization",
+      "https://w3id.org/research-commons/v0.1/Agent",
+      "https://w3id.org/research-commons/v0.1/Dataset",
+      "https://w3id.org/research-commons/v0.1/PublicDataset",
+      "https://w3id.org/research-commons/v0.1/RestrictedDataset",
+      "https://w3id.org/research-commons/v0.1/ResearchArtifact",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/PangenomeGraph",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/GenomicRegion",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/GRCh38Region",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/CHM13Region",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/Gene",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/ReadSet",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/GraphSummaryTask",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/RegionExtractionTask",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/HaplotypePresenceTask",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/RegionVariantListingTask",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/GeneLookupTask",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/ReadMappingVariantCallingTask",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/WholeGraphDeconstructTask",
+      "https://w3id.org/academic-wasteland/pangenome-town/contract/PopulationComparisonTask"
+    ],
+    "allowedObjectProperties": [
+      "https://w3id.org/research-commons/v0.1/partOfRequest",
+      "https://w3id.org/research-commons/v0.1/requestedBy",
+      "https://w3id.org/research-commons/v0.1/onBehalfOf",
+      "https://w3id.org/research-commons/v0.1/producedBy",
+      "https://w3id.org/research-commons/v0.1/addresses",
+      "https://w3id.org/research-commons/v0.1/usesDataset",
+      "https://w3id.org/research-commons/v0.1/hasOutput",
+      "https://w3id.org/research-commons/v0.1/hasClaim",
+      "https://w3id.org/research-commons/v0.1/hasEvidence",
+      "https://w3id.org/research-commons/v0.1/supports",
+      "https://w3id.org/research-commons/v0.1/contradicts",
+      "https://w3id.org/research-commons/v0.1/replicates",
+      "https://w3id.org/research-commons/v0.1/critiques",
+      "https://w3id.org/research-commons/v0.1/delegatesTo"
+    ]
+  },
+  "limits": {
+    "timeoutSeconds": 60,
+    "maxMessageBytes": 1048576,
+    "maxIndividuals": 2000
+  }
+}

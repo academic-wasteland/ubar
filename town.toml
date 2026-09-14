@@ -21,3 +21,9 @@ default_assembly = "GRCh38"
 db = "../data/exchange.db"
 supervisor_url = "http://127.0.0.1:8372"
 state_dir = ".gc/town"
+
+[rcp]
+graph_id = "JaSaPaGe-v1"
+# Requesters trusted for reputation-gated analyses until the Wasteland commons supplies standing.
+trusted_requesters = ["https://w3id.org/academic-wasteland/yamatai/agents/townsfolk", "https://orcid.org/0000-0001-8149-5890"]
+blocked_requesters = []
