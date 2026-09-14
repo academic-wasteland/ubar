@@ -1,12 +1,12 @@
 {
   "id": "https://w3id.org/academic-wasteland/ubar/contract/0.1.0",
   "version": "0.1.0",
-  "bundleDigest": "sha256:9967e13a6594efabedddcb50af720ac8e89f13a8600117bc5669d3b067d25d2f",
+  "bundleDigest": "sha256:0c03cc71112da5710af8677480a78e35915ab2e5ae1a0a3667e81d073dcd5f63",
   "ontologies": [
     {
       "id": "https://w3id.org/academic-wasteland/ubar/contract/ontology",
       "path": "ubar.ofn",
-      "digest": "sha256:bdfcb7d72408a4c6a26b649dfdf7755c4ca110a124758a082036244f834e75f3"
+      "digest": "sha256:627bb771ef7357651784a5f9dcba30565a1d3dab843e2908de5029f681dc426e"
     }
   ],
   "acceptedTaskClass": "https://w3id.org/academic-wasteland/ubar/AcceptedTask",
