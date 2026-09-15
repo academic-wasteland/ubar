@@ -77,7 +77,7 @@ Design: [pangenome-town docs](https://github.com/academic-wasteland/pangenome-to
   JaSaPaGe VCF. Allele frequencies need a `DataAccessAuthorization` from `ubar-dac` and an `EthicsApproval`
   from `wasteland-irb` with a covering scope; only aggregate outputs are released under the aggregate scope.
 - **Sites.** `workstation` (local, vg and bcftools, 8 CPUs, 32 GB, 30 min) holds the graph, the VCF, and the
-  controlled tier. Ubar has no DDBJ site: DDBJ is Yamatai's cluster, so work that needs it goes to Yamatai.
+  controlled tier. Ubar also has bounded `ddbj-direct` execution. Slurm work is delegated to Yamatai with Ubar's signed dataset grant.
 - **Rigger.** Rasha (`agents/rigger`, local Qwen) plans, validates, and runs compute workflows when
   `[compute] dispatch = "agent"`; with `inline` the node runs admitted jobs itself.
 
@@ -94,3 +94,15 @@ Agents run only through OpenRouter (GLM 5.3 Flash) or the lab's own vLLM
 at most, idle timeout 20 minutes. `gc costs` reports usage. `VLLM_API_KEY`
 joins `OPENROUTER_API_KEY` in `~/.gc/secrets.env`, opted in at install time
 with `GC_SUPERVISOR_ENV=VLLM_API_KEY gc supervisor install`.
+
+## Shared storage, published resources and new residents
+
+Saudi and Japanese datasets are logical sample views of the same JaSaPaGe VCF on DDBJ.
+Both towns can run bounded `ddbj-direct` queries; only Yamatai can submit via `ddbj`/`a001`.
+Every delegated dataset execution needs its custodian’s signed task grant.
+See [custody and execution](https://github.com/academic-wasteland/pangenome-town/blob/main/docs/dataset-custody.md).
+
+Both towns publish selected local pangenome results and host **Bloodninja**, a local-Qwen
+comic wizard for fictional role-play and imaginary defense only. Ubar also hosts **Q**,
+the temporal-knowledge-graph specialist, and serves temporal-KG definitions and documents.
+See [resources and residents](https://github.com/academic-wasteland/pangenome-town/blob/main/docs/resources-and-residents.md).

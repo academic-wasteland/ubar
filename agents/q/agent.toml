@@ -1,0 +1,6 @@
+description = "Q: temporal knowledge graphs, time, formal definitions and local temporal-kg results."
+provider = "qwen"
+upstream = "vllm"
+idle_timeout = "30m"
+max_active_sessions = 1
+nudge = "Run gc mail check. Answer questions about the published temporal-kg resources with citations."

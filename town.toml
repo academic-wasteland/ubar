@@ -65,4 +65,61 @@ max_cpus = 8
 max_mem_gb = 32
 max_wall_seconds = 1800
 
-# DDBJ is Yamatai's compute cluster: only Yamatai may run jobs there. Work that needs it is sent to Yamatai.
+# Both towns can access DDBJ storage. Only Yamatai holds the a001 Slurm execution route.
+
+[federation]
+# Private relay identity for replies to independently hosted towns.
+state = "~/.config/wasteland-bridge/ubar"
+
+# Bounded direct execution explicitly permitted by the operator on DDBJ.
+# Heavy jobs use Yamatai's Slurm route; logical dataset grants select the cohort.
+[[sites]]
+name = "ddbj-direct"
+storage = "ddbj"
+driver = "ssh"
+host = "ddbj"
+scheduler = "none"
+workdir = "/home/leechuck/wasteland/ubar/direct"
+datasets = []
+tools = ["bcftools"]
+max_cpus = 1
+max_mem_gb = 2
+max_wall_seconds = 600
+
+[custody]
+key = "~/.config/wasteland-custody/ubar/custody.key"
+
+[[datasets]]
+id = "ubar-jasapage"
+version = "JaSaPaGe-v1-GRCh38"
+custodian = "ubar"
+public_key = "ed25519:ycDcbml6y3aSfONP9yQ4ZhtzJvPJR0w9Ejqb1Bctt9I"
+samples = ["ksa001", "ksa002", "ksa003", "ksa004", "ksa005", "ksa006", "ksa007", "ksa008", "ksa009"]
+access = "public-source"
+workflows = ["allele-frequency", "genotype-export"]
+[datasets.locations.ddbj]
+vcf = "/home/asianhla/data/JaSaPaGe/JaSaPaGe.GRCh38.vcf.gz"
+
+[[datasets]]
+id = "yamatai-jasapage"
+version = "JaSaPaGe-v1-GRCh38"
+custodian = "yamatai"
+public_key = "ed25519:FPjKRojfkOv51G7Mrwg-zYler0N8pzHo5SzH-RHXsE0"
+samples = ["NA18940", "NA18943", "NA18945", "NA18952", "NA18970", "NA18990", "NA19007", "NA19066", "NA19079", "NA19088"]
+access = "public-source"
+workflows = ["allele-frequency", "genotype-export"]
+[datasets.locations.ddbj]
+vcf = "/home/asianhla/data/JaSaPaGe/JaSaPaGe.GRCh38.vcf.gz"
+
+[[resources]]
+name = "pangenome-results"
+root = "/home/leechuck/Public/software/pangenome/hla-viz"
+source = "bio-ontology-research-group/pangenome — hla-viz generated results"
+include = ["*.tsv", "*.pdf", "stage3_tables/*.tsv", "figures/*.png", "figures/*.pdf", "plots/*.png", "plots/*.pdf", "gene_graphs/*.stats.tsv"]
+
+[[resources]]
+name = "temporal-kg"
+root = "/home/leechuck/Public/software/temporal-kg"
+source = "temporal-kg — local formal definitions, reviews and validation"
+resident = "q"
+include = ["README.md", "temporal-kg-classification.pdf", "temporal-kg-classification.tex", "temporal-kg-health-appendix.tex", "temporal-knowledge-graphs-review.md", "REVIEW_Temporal_Knowledge_Graph_Formal_Definition.txt", "formal-definition-v2/README.md", "formal-definition-v2/*.pdf", "formal-definition-v2/*.tex", "formal-definition-v2/*.ofn", "formal-definition-v2/validation/*.txt"]

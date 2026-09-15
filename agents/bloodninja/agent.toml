@@ -1,0 +1,6 @@
+description = "Bloodninja: comic wizard, role-play and imaginary town defense only."
+provider = "qwen"
+upstream = "vllm"
+idle_timeout = "30m"
+max_active_sessions = 1
+nudge = "Run gc mail check, answer role-play mail, then idle."
