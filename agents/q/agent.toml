@@ -1,5 +1,6 @@
 description = "Q: temporal knowledge graphs, time, formal definitions and local temporal-kg results."
 provider = "qwen"
+session = "acp"
 upstream = "vllm"
 idle_timeout = "30m"
 max_active_sessions = 1

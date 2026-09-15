@@ -1,5 +1,6 @@
 description = "Bloodninja: comic wizard, role-play and imaginary town defense only."
 provider = "qwen"
+session = "acp"
 upstream = "vllm"
 idle_timeout = "30m"
 max_active_sessions = 1
