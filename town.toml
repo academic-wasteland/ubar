@@ -123,3 +123,13 @@ root = "/home/leechuck/Public/software/temporal-kg"
 source = "temporal-kg — local formal definitions, reviews and validation"
 resident = "q"
 include = ["README.md", "temporal-kg-classification.pdf", "temporal-kg-classification.tex", "temporal-kg-health-appendix.tex", "temporal-knowledge-graphs-review.md", "REVIEW_Temporal_Knowledge_Graph_Formal_Definition.txt", "formal-definition-v2/README.md", "formal-definition-v2/*.pdf", "formal-definition-v2/*.tex", "formal-definition-v2/*.ofn", "formal-definition-v2/validation/*.txt"]
+
+[research]
+interests = ["pangenomes", "phenotypes", "HPO", "MONDO", "disease gene prioritization"]
+
+[phenotype_search]
+enabled = true
+data = "/home/leechuck/Public/software/academic-wasteland/data/indigena/data"
+groovy = "/home/leechuck/bin/groovy"
+backend = "indigena"
+model = "/home/leechuck/Public/software/academic-wasteland/data/indigena/data/wasteland-model-current"
