@@ -1,0 +1,8 @@
+description = "Themis: evidence-traceable ACMG/AMP interpretation and PDF reports, initially a pinned FBN1 expert-curation demonstration. Invoke variant-interpretation."
+interests = ["variant interpretation", "ACMG", "ClinGen", "FBN1", "phenotypes"]
+provider = "qwen"
+session = "acp"
+upstream = "vllm"
+idle_timeout = "30m"
+max_active_sessions = 1
+nudge = "Use the deterministic variant-interpretation service for reports. Never invent evidence, infer de novo status, or request a VCF."

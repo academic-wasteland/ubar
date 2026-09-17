@@ -134,3 +134,6 @@ groovy = "/home/leechuck/bin/groovy"
 backend = "indigena"
 model = "/home/leechuck/Public/software/academic-wasteland/data/indigena/data/wasteland-model-current"
 orthologues = "/home/leechuck/Public/software/academic-wasteland/data/indigena/data/orthologues.json"
+
+[variant_interpretation]
+enabled = true
